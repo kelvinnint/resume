@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>English Major Resume - Recent Graduate</title>
+  <!-- 引入Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- 引入Font Awesome -->
+  <link href="https://cdn.jsdelivr.net/npm/font-awesome@4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <!-- 配置Tailwind自定义颜色和字体 -->
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#2563eb',
+            secondary: '#60a5fa',
+            accent: '#bfdbfe',
+            dark: '#1e293b',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            serif: ['Georgia', 'Cambria', 'serif'],
+          },
+        },
+      }
+    }
+  </script>
+  <!-- 自定义工具类 -->
+  <style type="text/tailwindcss">
+    @layer utilities {
+      .content-auto {
+        content-visibility: auto;
+      }
+      .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+      }
+      .fade-in.visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .skill-level {
+        display: flex;
+        gap: 2px;
+      }
+      .skill-dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+      }
+    }
+  </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800">
+  <!-- 导航栏 -->
+  <header class="sticky top-0 bg-white shadow-sm z-50 transition-all duration-300" id="navbar">
+    <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+      <h1 class="text-primary font-bold text-xl md:text-2xl">Resume</h1>
+      <nav class="hidden md:flex space-x-8">
+        <a href="#about" class="text-gray-600 hover:text-primary transition-colors">About</a>
+        <a href="#education" class="text-gray-600 hover:text-primary transition-colors">Education</a>
+        <a href="#language" class="text-gray-600 hover:text-primary transition-colors">Languages</a>
+        <a href="#experience" class="text-gray-600 hover:text-primary transition-colors">Experience</a>
+        <a href="#certificates" class="text-gray-600 hover:text-primary transition-colors">Certificates</a>
+      </nav>
+      <button class="md:hidden text-gray-600 hover:text-primary" id="menuToggle">
+        <i class="fa fa-bars text-xl"></i>
+      </button>
+    </div>
+    <!-- 移动端菜单 -->
+    <div class="md:hidden hidden bg-white w-full border-t" id="mobileMenu">
+      <div class="container mx-auto px-4 py-2 flex flex-col space-y-3">
+        <a href="#about" class="py-2 text-gray-600 hover:text-primary transition-colors">About</a>
+        <a href="#education" class="py-2 text-gray-600 hover:text-primary transition-colors">Education</a>
+        <a href="#language" class="py-2 text-gray-600 hover:text-primary transition-colors">Languages</a>
+        <a href="#experience" class="py-2 text-gray-600 hover:text-primary transition-colors">Experience</a>
+        <a href="#certificates" class="py-2 text-gray-600 hover:text-primary transition-colors">Certificates</a>
+      </div>
+    </div>
+  </header>
+
+  <main class="container mx-auto px-4 py-8 max-w-5xl">
+    <!-- 个人信息区域 -->
+    <section id="about" class="mb-12 fade-in">
+      <div class="bg-white rounded-xl shadow-md overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/3 bg-primary p-8 text-white flex flex-col items-center justify-center">
+            <div class="w-48 h-48 rounded-full overflow-hidden border-4 border-white/30 mb-6">
+              <img src="https://picsum.photos/id/64/200/200" alt="Profile Photo" class="w-full h-full object-cover">
+            </div>
+            <h2 class="text-3xl font-bold mb-2">Li Ming</h2>
+            <p class="text-white/80 text-lg mb-6">English Major Graduate</p>
+            
+            <div class="w-full space-y-4 mb-8">
+              <div class="flex items-center">
+                <i class="fa fa-envelope-o w-5 text-center mr-3"></i>
+                <span>liming@email.com</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-phone w-5 text-center mr-3"></i>
+                <span>+86 138-XXXX-XXXX</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-map-marker w-5 text-center mr-3"></i>
+                <span>Shanghai, China</span>
+              </div>
+              <div class="flex items-center">
+                <i class="fa fa-github w-5 text-center mr-3"></i>
+                <a href="#" class="hover:text-accent transition-colors">github.com/liming</a>
+              </div>
+            </div>
+            
+            <a href="#" class="bg-white text-primary px-6 py-2 rounded-lg font-medium hover:bg-gray-100 transition-colors flex items-center">
+              <i class="fa fa-download mr-2"></i> Download CV
+            </a>
+          </div>
+          
+          <div class="md:w-2/3 p-8">
+            <h3 class="text-2xl font-bold mb-4 text-gray-800 border-b border-gray-200 pb-2">About Me</h3>
+            <p class="mb-4 text-gray-700 leading-relaxed">
+              Recent English major graduate with strong language proficiency and cross-cultural communication skills. Passionate about translation, international education, and cross-cultural exchange.
+            </p>
+            <p class="mb-6 text-gray-700 leading-relaxed">
+              Possess excellent written and verbal communication abilities in both English and Chinese, with practical experience in translation, interpretation, and teaching. Quick learner with strong teamwork spirit and adaptability.
+            </p>
+            
+            <h3 class="text-xl font-bold mb-3 text-gray-800">Core Strengths</h3>
+            <div class="grid grid-cols-2 md:grid-cols-3 gap-3">
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-language text-primary mr-2"></i>
+                <span>Translation & Interpretation</span>
+              </div>
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-comments text-primary mr-2"></i>
+                <span>Cross-cultural Communication</span>
+              </div>
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-book text-primary mr-2"></i>
+                <span>English Teaching</span>
+              </div>
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-pencil text-primary mr-2"></i>
+                <span>Content Writing</span>
+              </div>
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-users text-primary mr-2"></i>
+                <span>Event Coordination</span>
+              </div>
+              <div class="flex items-center bg-accent/20 p-2 rounded-lg">
+                <i class="fa fa-file-text text-primary mr-2"></i>
+                <span>Document Editing</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education" class="mb-12 fade-in">
+      <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fa fa-graduation-cap text-primary mr-3"></i> Education
+      </h3>
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="relative pl-8 pb-8 border-l-2 border-primary">
+          <div class="absolute w-4 h-4 bg-primary rounded-full -left-[9px] top-1"></div>
+          <div class="flex flex-wrap justify-between items-start mb-2">
+            <h4 class="text-xl font-bold text-gray-800">Fudan University</h4>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Sept 2021 - June 2025</span>
+          </div>
+          <p class="text-gray-700 mb-3">Bachelor of Arts in English Language and Literature</p>
+          <p class="text-gray-700 mb-4"><strong>GPA:</strong> 3.8/4.0 | <strong>Rank:</strong> Top 5% in major</p>
+          
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-2">Relevant Courses:</h5>
+            <div class="flex flex-wrap gap-2 mb-4">
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Translation Theory & Practice</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Interpretation Skills</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">British & American Literature</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Cross-cultural Communication</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Linguistics</span>
+              <span class="bg-gray-100 text-gray-700 px-3 py-1 rounded-full text-sm">Academic Writing</span>
+            </div>
+          </div>
+          
+          <div>
+            <h5 class="font-semibold text-gray-800 mb-2">Academic Activities:</h5>
+            <ul class="list-disc list-inside text-gray-700 space-y-1">
+              <li>Member of University English Debate Team (2022-2024)</li>
+              <li>Editor of the university's English magazine "Global Vision"</li>
+              <li>Participated in "Sino-US Youth Cultural Exchange Forum" as volunteer interpreter</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 语言能力 -->
+    <section id="language" class="mb-12 fade-in">
+      <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fa fa-language text-primary mr-3"></i> Language Proficiency
+      </h3>
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <div class="flex items-center mb-4">
+            <img src="https://flagcdn.com/w20/gb.png" alt="English" class="w-8 h-6 mr-3">
+            <h4 class="text-xl font-bold text-gray-800">English</h4>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Listening</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Speaking</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-secondary"></span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Reading</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Writing</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <p class="text-gray-700"><strong>Equivalent to:</strong> CET-6 (620), TEM-8 (Good), IELTS 7.5</p>
+          </div>
+        </div>
+        
+        <div class="bg-white rounded-xl shadow-md p-6">
+          <div class="flex items-center mb-4">
+            <img src="https://flagcdn.com/w20/cn.png" alt="Chinese" class="w-8 h-6 mr-3">
+            <h4 class="text-xl font-bold text-gray-800">Chinese (Native)</h4>
+          </div>
+          
+          <p class="text-gray-700 mb-6">Native speaker with excellent writing and editing skills, proficient in both modern and classical Chinese.</p>
+          
+          <div class="flex items-center mb-4">
+            <img src="https://flagcdn.com/w20/fr.png" alt="French" class="w-8 h-6 mr-3">
+            <h4 class="text-xl font-bold text-gray-800">French (Basic)</h4>
+          </div>
+          
+          <div class="space-y-4">
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Listening</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-secondary"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                </div>
+              </div>
+            </div>
+            <div>
+              <div class="flex justify-between mb-1">
+                <span class="text-gray-700">Speaking</span>
+                <div class="skill-level">
+                  <span class="skill-dot bg-primary"></span>
+                  <span class="skill-dot bg-secondary"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                  <span class="skill-dot bg-gray-300"></span>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div class="mt-6 pt-4 border-t border-gray-100">
+            <p class="text-gray-700"><strong>Certification:</strong> DELF A2</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 实践经历 -->
+    <section id="experience" class="mb-12 fade-in">
+      <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fa fa-briefcase text-primary mr-3"></i> Practical Experience
+      </h3>
+      
+      <div class="space-y-6">
+        <!-- 实习1 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-wrap justify-between items-start mb-3">
+            <h4 class="text-xl font-bold text-gray-800">Translation Intern</h4>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">June 2024 - Aug 2024</span>
+          </div>
+          <p class="text-gray-700 font-medium mb-3">Global Translation Services Co., Ltd.</p>
+          
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            <li>Translated technical documents (50,000+ words) between English and Chinese for international clients</li>
+            <li>Edited and proofread translations to ensure accuracy and consistency</li>
+            <li>Assisted in organizing translation workshops for new interns</li>
+            <li>Collaborated with a team of translators to meet tight deadlines</li>
+          </ul>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Technical Translation</span>
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Proofreading</span>
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">CAT Tools</span>
+          </div>
+        </div>
+        
+        <!-- 实习2 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-wrap justify-between items-start mb-3">
+            <h4 class="text-xl font-bold text-gray-800">English Teacher Assistant</h4>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">Sept 2023 - Jan 2024</span>
+          </div>
+          <p class="text-gray-700 font-medium mb-3">International Language Institute</p>
+          
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            <li>Assisted foreign teachers in conducting English classes for 30+ students</li>
+            <li>Prepared teaching materials and designed interactive activities</li>
+            <li>Provided one-on-one tutoring for students with learning difficulties</li>
+            <li>Organized English corner activities to improve students' speaking skills</li>
+          </ul>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Teaching</span>
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Curriculum Design</span>
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Student Counseling</span>
+          </div>
+        </div>
+        
+        <!-- 志愿者经历 -->
+        <div class="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition-shadow">
+          <div class="flex flex-wrap justify-between items-start mb-3">
+            <h4 class="text-xl font-bold text-gray-800">Volunteer Interpreter</h4>
+            <span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-sm">May 2023</span>
+          </div>
+          <p class="text-gray-700 font-medium mb-3">International Trade Fair</p>
+          
+          <ul class="list-disc list-inside text-gray-700 space-y-2 mb-4">
+            <li>Provided consecutive interpretation for foreign exhibitors and Chinese visitors</li>
+            <li>Assisted in document translation and communication between parties</li>
+            <li>Helped foreign guests with daily communication and navigation</li>
+          </ul>
+          
+          <div class="flex flex-wrap gap-2">
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Consecutive Interpretation</span>
+            <span class="bg-accent/30 text-primary px-3 py-1 rounded-full text-sm">Cross-cultural Communication</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 证书奖项 -->
+    <section id="certificates" class="mb-12 fade-in">
+      <h3 class="text-2xl font-bold mb-6 text-gray-800 flex items-center">
+        <i class="fa fa-certificate text-primary mr-3"></i> Certificates & Awards
+      </h3>
+      
+      <div class="bg-white rounded-xl shadow-md p-6">
+        <div class="grid md:grid-cols-2 gap-6">
+          <div>
+            <h4 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Professional Certificates</h4>
+            <ul class="space-y-3">
+              <li class="flex">
+                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">Test for English Majors - Band 8 (TEM-8)</span>
+                  <p class="text-gray-600 text-sm">June 2024, Grade: Good</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">College English Test - Band 6 (CET-6)</span>
+                  <p class="text-gray-600 text-sm">Dec 2022, Score: 620</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">International English Language Testing System (IELTS)</span>
+                  <p class="text-gray-600 text-sm">May 2023, Overall Band: 7.5</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-check-circle text-primary mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">DELF A2 (French Proficiency)</span>
+                  <p class="text-gray-600 text-sm">Sept 2023</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+          
+          <div>
+            <h4 class="text-lg font-bold text-gray-800 mb-4 border-b border-gray-200 pb-2">Awards & Honors</h4>
+            <ul class="space-y-3">
+              <li class="flex">
+                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">National Scholarship for Outstanding Students</span>
+                  <p class="text-gray-600 text-sm">2022-2023 Academic Year</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">First Prize in National English Speech Contest (College Group)</span>
+                  <p class="text-gray-600 text-sm">April 2023</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">Outstanding Graduate of Fudan University</span>
+                  <p class="text-gray-600 text-sm">June 2025 (Expected)</p>
+                </div>
+              </li>
+              <li class="flex">
+                <i class="fa fa-trophy text-yellow-500 mt-1 mr-3"></i>
+                <div>
+                  <span class="font-medium text-gray-800">Champion of University English Debate Competition</span>
+                  <p class="text-gray-600 text-sm">Nov 2022</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- 页脚 -->
+  <footer class="bg-gray-800 text-white py-8">
+    <div class="container mx-auto px-4 text-center">
+      <p class="mb-4">Looking forward to contributing my language skills and cultural awareness to your team</p>
+      <p class="text-gray-400">© 2025 Li Ming - English Major Graduate</p>
+    </div>
+  </footer>
+
+  <script>
+    // 移动端菜单切换
+    const menuToggle = document.getElementById('menuToggle');
+    const mobileMenu = document.getElementById('mobileMenu');
+    
+    menuToggle.addEventListener('click', () => {
+      mobileMenu.classList.toggle('hidden');
+    });
+    
+    // 导航栏滚动效果
+    const navbar = document.getElementById('navbar');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        navbar.classList.add('py-2', 'shadow');
+        navbar.classList.remove('py-3', 'shadow-sm');
+      } else {
+        navbar.classList.add('py-3', 'shadow-sm');
+        navbar.classList.remove('py-2', 'shadow');
+      }
+    });
+    
+    // 平滑滚动
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        
+        // 关闭移动菜单（如果打开）
+        if (!mobileMenu.classList.contains('hidden')) {
+          mobileMenu.classList.add('hidden');
+        }
+        
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // 滚动渐显效果
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeInObserver = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          fadeInObserver.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.1 });
+    
+    fadeElements.forEach(element => {
+      fadeInObserver.observe(element);
+    });
+  </script>
+</body>
+</html>
